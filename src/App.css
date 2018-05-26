@@ -1,28 +1,34 @@
-.App {
+*{
+  padding: none;
+  outline: none;
+  margin: none;
+}
+h1{
   text-align: center;
+  font-size: 2em;
+  font-family: fantasy;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+h2{
+  text-align: center;
+  font-size: 1.6em;
+  font-family: monospace;
 }
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+form{
+  text-align: center;
+  margin-top: 20%;
 }
-
-.App-title {
+input{
   font-size: 1.5em;
+  border: none;
+  border-bottom-width: thin;
+  border-bottom-style: inset;
+  padding: 4px;
+  margin: 10px;
 }
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+button{
+  border-radius: 8px;
+  padding: 6px;
+  border: none;
+  font-size: 1.5em;
+  box-shadow: 1px 3px 3px rgba(33, 33, 33, .2);
 }

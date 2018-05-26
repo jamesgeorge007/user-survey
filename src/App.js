@@ -17,6 +17,7 @@ let config = {
 
 
 class App extends Component {
+
   constructor(props){
     super(props);
     this.state = {uid : uuid.v1(), userName : '',
@@ -28,14 +29,15 @@ class App extends Component {
     this.formSubmit = this.formSubmit.bind(this);
     this.answerSubmitted = this.answerSubmitted.bind(this);
     this.questionsSubmitted = this.questionsSubmitted.bind(this);
-    this.add = this.add.bind(this);
   }
+
   formSubmit(event){
     let userName = this.refs.name.value;
     this.setState({userName : userName}, () => {
       console.log(this.state);
     });
   }
+
   answerSubmitted(event){
     let answers = this.state.answers;
 
@@ -50,6 +52,7 @@ class App extends Component {
     console.log(this.state);
   });
   }
+
   questionsSubmitted(){
 firebase.database().ref('userSurvey/'+this.state.uid).set({
       userName: this.state.userName,
@@ -57,9 +60,7 @@ firebase.database().ref('userSurvey/'+this.state.uid).set({
     });
     this.setState({isSubmitted: true});
   }
-  add(){
-    console.log('hey');
-  }
+
   render() {
     let userName;
     let questions;
@@ -67,6 +68,7 @@ firebase.database().ref('userSurvey/'+this.state.uid).set({
       userName = <div>
               <form onSubmit = {this.formSubmit}>
                 <input type='text' ref='name' placeholder='Enter your name'/>
+                <br />
                 <button>Submit</button>
               </form>
           </div>;
